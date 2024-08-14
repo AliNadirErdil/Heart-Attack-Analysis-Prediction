@@ -91,7 +91,13 @@ Change your directory to the project folder:
    ```bash
 cd heart-attack-analysis
    ```
-3. **Open the Jupyter Notebook**
+
+3. **Install the required dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+4. **Open the Jupyter Notebook**
 ```bash
 jupyter notebook
 ```
