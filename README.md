@@ -241,10 +241,9 @@ print(f"Accuracy: {accuracy:.4f}")
 ```
 # Results
 
-**Accuracy**: The logistic regression model achieved an accuracy score of X.XXX on the test set.
-**Classification Report**: The classification report shows precision, recall, and F1-score for both classes (Less chance of heart attack and More chance of heart attack).
+- **Accuracy**: The logistic regression model achieved an accuracy score of X.XXX on the test set.
+- **Classification Report**: The classification report shows precision, recall, and F1-score for both classes (Less chance of heart attack and More chance of heart attack).
 
-**Accuracy**: The logistic regression model achieved an accuracy score of X.XXX on the test set.
 
 # Conclusion
 This project demonstrates the process of predicting heart disease using logistic regression. The results suggest that the model performs well on this dataset, but further tuning and validation on additional datasets could improve its robustness.
