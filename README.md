@@ -4,7 +4,7 @@ This project focuses on analyzing patient data to predict the likelihood of a he
 
 Following the EDA, the project proceeds with detailed data visualization to uncover patterns and relationships. Violin plots are used to examine the distribution of numerical features across different output classes, while pie charts reveal the distribution of categorical features with respect to heart disease. Scatter plots and heatmaps further help in understanding the correlations between features and their impact on the target variable.
 
-Data preprocessing is a crucial step in preparing the dataset for modeling. This involves encoding categorical variables into numerical formats, scaling numerical features using techniques like RobustScaler to handle outliers, and splitting the data into training and testing sets to evaluate the model’s performance effectively.
+Data preprocessing is a crucial step in preparing the dataset for modeling. This involves encoding categorical variables into numerical formats, scaling numerical features using techniques like `RobustScaler` to handle outliers, and splitting the data into training and testing sets to evaluate the model’s performance effectively.
 
 The core of the project involves building and training a logistic regression model. This model is used to predict the probability of a heart attack based on the processed data. The evaluation of the model includes accuracy assessment, detailed classification metrics, and providing a comprehensive classification report to ensure its reliability and effectiveness in predicting heart disease risk.
 
