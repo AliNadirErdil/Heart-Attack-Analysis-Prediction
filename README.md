@@ -99,7 +99,7 @@ jupyter notebook
 # Project Overview
 
 ## 1. Data Loading and Exploration
-- **Data Loading**: The dataset is loaded using the pandas library. Initial exploration includes checking the data shape, data types, and missing values.
+- **Data Loading**: The dataset is loaded using the `pandas` library. Initial exploration includes checking the data shape, data types, and missing values.
 - **Basic Statistics**: Descriptive statistics are generated to understand the distribution and central tendencies of the dataset.
 ```python
 import pandas as pd
@@ -115,7 +115,7 @@ print(df.describe().T)
 ![image](https://github.com/user-attachments/assets/518abd0b-f1bd-43c5-8b43-8b3757b3e25e)
 
 ## 2. Outlier Detection
-- **Z-Score Method**: Outliers are detected using the Z-score method. Rows with Z-scores greater than 3 in any numerical feature are identified as potential outliers.
+- **Z-Score Method**: Outliers are detected using the `Z-score method`. Rows with Z-scores greater than 3 in any numerical feature are identified as potential outliers.
 
 - **Outlier Rows**: After detecting outliers, the specific rows containing these outliers are examined to understand their impact on the dataset.
 
@@ -141,11 +141,11 @@ print(outlier_rows)
 - **Violin Plots**: Violin plots are utilized to visualize the distribution of numerical features across the two classes defined by the output variable (0 and 1). Each plot provides a combined view of the data distribution's probability density and cumulative distribution. By comparing these plots for different features, one can observe how the distribution varies between patients who have heart disease and those who do not. This visualization helps in understanding whether certain numerical features exhibit distinct patterns or variations associated with the presence or absence of heart disease.
 ![violin_plots](https://github.com/user-attachments/assets/cb60023f-ff3f-4118-96c7-57a9c010cc7c)
 
-- **Pie Charts**: Pie charts are created for categorical features to display the distribution of each category in relation to the output variable. These charts visually represent the proportion of each category within the context of the heart disease classification, making it easier to understand how different categorical attributes are associated with heart disease. For example, pie charts might show the proportion of patients with different chest pain types or fasting blood sugar levels, illustrating how these categories contribute to the likelihood of heart disease.
+- **Pie Charts**: Pie charts are created for categorical features to display the distribution of each category in relation to the output variable. These charts visually represent the proportion of each category within the context of the `heart disease classification`, making it easier to understand how different categorical attributes are associated with heart disease. For example, pie charts might show the proportion of patients with different chest pain types or fasting blood sugar levels, illustrating how these categories contribute to the likelihood of heart disease.
 
 ![image](https://github.com/user-attachments/assets/f7aeccc7-b7bf-45cf-a24b-9bd64e4245ac)
 
-- **Scatter Plots**: Scatter plots are employed to explore the relationship between numerical features and the output variable. Each plot displays data points representing individual patients, with color-coding used to differentiate between the two classes of the output variable (0 and 1). Scatter plots provide a visual way to assess correlations, clusters, and potential patterns within the data, helping to identify how specific numerical features relate to the presence or absence of heart disease.
+- **Scatter Plots**: Scatter plots are employed to explore the relationship between numerical features and the output variable. Each plot displays data points representing individual patients, with color-coding used to differentiate between the two classes of the output variable (0 and 1). Scatter plots provide a visual way to assess `correlations`, `clusters`, and potential patterns within the data, helping to identify how specific numerical features relate to the presence or absence of heart disease.
 
 ![numeric_feature_scatter_plots](https://github.com/user-attachments/assets/2f26d73e-c4a1-4400-8723-a3bf841f583e)
 
@@ -215,7 +215,7 @@ plt.show()
 
 - **Feature Encoding**: Categorical features are one-hot encoded to convert them into a format suitable for machine learning models.
 
-- **Feature Scaling**: Numerical features are scaled using RobustScaler to handle any potential outliers and ensure that the data is normalized before feeding it into the model.
+- **Feature Scaling**: Numerical features are scaled using `RobustScaler` to handle any potential outliers and ensure that the data is normalized before feeding it into the model.
 
 - **Train-Test Split**: The dataset is split into training and testing sets to evaluate the model's performance on unseen data.
 
@@ -236,9 +236,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 ```
 ## 6. Model Training and Evaluation
 
-- **Logistic Regression**: A logistic regression model is trained on the preprocessed data. This model is chosen for its simplicity and effectiveness in binary classification tasks.s.
+- **Logistic Regression**: A logistic `regression model` is trained on the preprocessed data. This model is chosen for its simplicity and effectiveness in binary classification tasks.
 
-- **Model Evaluation**: The performance of the logistic regression model is assessed using several metrics:
+- **Model Evaluation**: The performance of the `logistic regression model` is assessed using several metrics:
 
   - **Accuracy**: This metric measures the proportion of correct predictions made by the model. It indicates the overall success rate of the model in classifying instances correctly.
 
@@ -274,11 +274,11 @@ print(f"Accuracy: {accuracy:.4f}")
 
 
 # Conclusion
-This project illustrates the methodology for predicting heart disease using logistic regression, a fundamental technique in binary classification problems. Here’s a detailed summary of the findings and implications:
+This project illustrates the methodology for predicting heart disease using `logistic regression`, a fundamental technique in binary classification problems. Here’s a detailed summary of the findings and implications:
 
 1. **Model Performance:**
    - The logistic regression model has shown promising performance on the current dataset. Evaluation metrics, such as accuracy, precision, recall, and F1 score, indicate that the model effectively differentiates between patients with and without heart disease.
-   - The use of a confusion matrix and ROC curve analysis further confirms the model’s ability to handle the classification task with a satisfactory level of performance.
+   - The use of a confusion matrix  confirms the model’s ability to handle the classification task with a satisfactory level of performance.
 
 2. **Feature Analysis:**
    - Key features such as `age`, `blood pressure`, `cholesterol levels`, `maximum heart rate`, and `depression induced by exercise` have been found to be significant predictors of heart disease.
