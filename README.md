@@ -143,10 +143,15 @@ print(outlier_rows)
 
 - **Pie Charts**: Pie charts are created for categorical features to display the distribution of each category in relation to the output variable. These charts visually represent the proportion of each category within the context of the heart disease classification, making it easier to understand how different categorical attributes are associated with heart disease. For example, pie charts might show the proportion of patients with different chest pain types or fasting blood sugar levels, illustrating how these categories contribute to the likelihood of heart disease.
 
+![image](https://github.com/user-attachments/assets/f7aeccc7-b7bf-45cf-a24b-9bd64e4245ac)
+
 - **Scatter Plots**: Scatter plots are employed to explore the relationship between numerical features and the output variable. Each plot displays data points representing individual patients, with color-coding used to differentiate between the two classes of the output variable (0 and 1). Scatter plots provide a visual way to assess correlations, clusters, and potential patterns within the data, helping to identify how specific numerical features relate to the presence or absence of heart disease.
 
+![numeric_feature_scatter_plots](https://github.com/user-attachments/assets/2f26d73e-c4a1-4400-8723-a3bf841f583e)
 
 - **Heatmaps**: Correlation heatmaps are used to visualize the relationships between different numerical features in the dataset. By displaying a matrix of correlation coefficients, heatmaps highlight the degree to which features are linearly related to each other. This visualization aids in identifying features with strong correlations, which can be crucial for feature selection and understanding multicollinearity. High correlation between features may indicate redundancy, while low correlation can suggest unique contributions to the predictive model.
+
+![image](https://github.com/user-attachments/assets/d1ad4c44-bfa6-497c-af09-eedb0a88ef30)
 
 ```python
 import seaborn as sns
@@ -203,6 +208,8 @@ sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidt
 plt.title('Correlation Matrix', fontsize=16)
 plt.show()
 ```
+![image](https://github.com/user-attachments/assets/4df6240b-2d5e-4a14-9ab6-d7dc4eee5703)
+
 ## 5. Data Preprocessing
 
 
@@ -242,10 +249,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
     - **Support**: The number of actual occurrences of each class in the dataset, which provides context for the precision, recall, and F1-score values.
 
 These evaluation metrics are crucial for understanding the model's performance in predicting heart disease and ensuring its reliability in making accurate predictions.
-
-
-
-
 
 
 ```python
