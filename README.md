@@ -90,7 +90,118 @@ print(df.info())
 print(df.describe().T)
 ```
 
+## 2. Outlier Detection
+- **Z-Score Method**: Outliers are detected using the Z-score method. Rows with Z-scores greater than 3 in any numerical feature are identified as potential outliers.
+
+- **Outlier Rows**: After detecting outliers, the specific rows containing these outliers are examined to understand their impact on the dataset.
+
+```python
+import numpy as np
+from scipy import stats
+
+# Select numerical columns
+num_cols = ['age', 'trtbps', 'chol', 'thalachh', 'oldpeak']
+
+# Calculate Z-scores
+z_scores = np.abs(stats.zscore(df[num_cols]))
+
+# Identify outliers
+outliers = (z_scores > 3).any(axis=1)
+outlier_rows = df[outliers]
+
+print("Rows with potential outliers:")
+print(outlier_rows)
+```
+
+## 3. Data Visualization
+- **Violin Plots**: Violin plots are generated for numerical features against the output variable to visualize the distribution of these features across the two classes (0 and 1).
+.
+
+- **Pie Charts**: Pie charts are created for categorical features to display the distribution of each category with respect to the output. This helps in understanding how different categories are associated with heart disease.
+
+- **Scatter Plots**: Scatter plots are used to explore the relationship between numerical features and the output variable, with color-coding to represent the output.
+
+- **Heatmaps**: Correlation heatmaps are used to visualize the relationships between different features in the dataset. This step helps in identifying highly correlated features that might influence the model.
 
 
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
 
+# Violin plots for numerical features
+for feature in num_cols:
+    plt.figure(figsize=(12, 6))
+    sns.violinplot(x='output', y=feature, data=df)
+    plt.title(f'{feature} Distribution by Output')
+    plt.xlabel('Output')
+    plt.ylabel(feature)
+    plt.grid(True)
+    plt.show()
+
+# Pie Charts for categorical features
+categorical_features = {
+    'sex': {0: 'Male', 1: 'Female'},
+    'cp': {1: 'Typical angina', 2: 'Atypical angina', 3: 'Non-anginal pain', 4: 'Asymptomatic'},
+    'fbs': {0: 'Less than or equal to 120 mg/dl', 1: 'Greater than 120 mg/dl'},
+    'restecg': {0: 'Normal', 1: 'ST-T wave abnormality', 2: 'Left ventricular hypertrophy'},
+    'exng': {0: 'No Exercise Induced Angina', 1: 'Exercise Induced Angina'},
+    'slp': {0: 'Low slope', 1: 'Normal slope', 2: 'High slope'},
+    'caa': {0: '0 vessels', 1: '1 vessel', 2: '2 vessels', 3: '3 vessels'},
+    'thall': {1: 'Normal', 2: 'Fixed defect', 3: 'Reversible defect'}
+}
+
+for feature, labels in categorical_features.items():
+    feature_counts = df.groupby([feature, 'output']).size().unstack().fillna(0)
+    existing_categories = feature_counts.index.tolist()
+    
+    for category, label in labels.items():
+        if category in existing_categories:
+            plt.figure(figsize=(8, 8))
+            category_counts = feature_counts.loc[category]
+            plt.pie(category_counts, labels=['Not Heart Attack', 'Heart Attack'], autopct='%1.1f%%', colors=['#66c2a5', '#fc8d62'])
+            plt.title(f'{feature} - {label} Distribution by Output')
+            plt.show()
+```
+
+## 4. Correlation Analysis
+
+- **Correlation Matrix**: A correlation matrix is computed to understand the relationships between the different numerical features. This step is crucial for identifying multicollinearity and understanding which features are most strongly related to the target variable output.
+
+- **Heatmap Visualization**: The correlation matrix is visualized using a heatmap, providing a clear and intuitive understanding of the feature relationships.
+
+```python
+# Correlation matrix
+correlation_matrix = df.corr()
+
+# Heatmap
+plt.figure(figsize=(16, 12))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+plt.title('Correlation Matrix', fontsize=16)
+plt.show()
+```
+## 5. Data Preprocessing
+
+
+- **Feature Encoding**: Categorical features are one-hot encoded to convert them into a format suitable for machine learning models.
+
+- **Feature Scaling**: Numerical features are scaled using RobustScaler to handle any potential outliers and ensure that the data is normalized before feeding it into the model.
+
+- **Train-Test Split**: The dataset is split into training and testing sets to evaluate the model's performance on unseen data.
+
+
+```python
+from sklearn.preprocessing import RobustScaler
+from sklearn.model_selection import train_test_split
+
+# Encoding categorical features and scaling numerical features
+df_encoded = pd.get_dummies(df, columns=['sex', 'cp', 'fbs', 'restecg', 'exng', 'slp', 'caa', 'thall'], drop_first=True)
+scaler = RobustScaler()
+df_encoded[num_cols] = scaler.fit_transform(df_encoded[num_cols])
+
+# Split data into training and testing sets
+X = df_encoded.drop('output', axis=1)
+y = df_encoded['output']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+```
 
