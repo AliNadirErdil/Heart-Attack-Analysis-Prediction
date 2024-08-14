@@ -202,6 +202,42 @@ df_encoded[num_cols] = scaler.fit_transform(df_encoded[num_cols])
 X = df_encoded.drop('output', axis=1)
 y = df_encoded['output']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
 ```
+## 6. Model Training and Evaluation
 
+- **Logistic Regression**: A logistic regression model is trained on the preprocessed data. This model is chosen for its simplicity and effectiveness in binary classification tasks.s.
+
+- **Model Evaluation**: The performance of the logistic regression model is assessed using several metrics:
+
+  - **Accuracy**: This metric measures the proportion of correct predictions made by the model. It indicates the overall success rate of the model in classifying instances correctly.
+
+  - **Classification Report**: This report provides detailed metrics for evaluating the model's performance, including:
+    - **Precision**: The proportion of true positive predictions among all positive predictions made by the model. It reflects how many of the predicted positive cases are actually positive.
+    - **Recall**: The proportion of true positive predictions among all actual positive cases. It measures how well the model identifies all relevant cases.
+    - **F1-Score**: The harmonic mean of precision and recall, providing a single metric that balances both precision and recall, especially useful when dealing with imbalanced classes.
+    - **Support**: The number of actual occurrences of each class in the dataset, which provides context for the precision, recall, and F1-score values.
+
+These evaluation metrics are crucial for understanding the model's performance in predicting heart disease and ensuring its reliability in making accurate predictions.
+
+
+
+
+
+
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, accuracy_score, roc_auc_score
+
+# Train logistic regression model
+logreg = LogisticRegression(max_iter=1000)
+logreg.fit(X_train, y_train)
+
+# Make predictions
+y_pred = logreg.predict(X_test)
+
+# Evaluation
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.4f}")
+
+classification_report = classification_report(y_test, y_pred, target_names=['Less chance of heart attack', 'More chance of heart attack'])
+print("\nClassification Report:\n", classification_report)```
