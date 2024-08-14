@@ -80,7 +80,7 @@ Ensure you have Python installed on your system. It is recommended to use Python
 
 1. **Clone the Repository**
 
-   First, clone this repository to your local machine using Git. Open your terminal or command prompt and run the following command:
+First, clone this repository to your local machine using Git. Open your terminal or command prompt and run the following command:
 
 ```bash
 git clone https://github.com/yourusername/heart-attack-analysis.git
