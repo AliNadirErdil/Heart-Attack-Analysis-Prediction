@@ -112,6 +112,7 @@ print(df.shape)
 print(df.info())
 print(df.describe().T)
 ```
+![image](https://github.com/user-attachments/assets/518abd0b-f1bd-43c5-8b43-8b3757b3e25e)
 
 ## 2. Outlier Detection
 - **Z-Score Method**: Outliers are detected using the Z-score method. Rows with Z-scores greater than 3 in any numerical feature are identified as potential outliers.
@@ -138,7 +139,7 @@ print(outlier_rows)
 
 ## 3. Data Visualization
 - **Violin Plots**: Violin plots are utilized to visualize the distribution of numerical features across the two classes defined by the output variable (0 and 1). Each plot provides a combined view of the data distribution's probability density and cumulative distribution. By comparing these plots for different features, one can observe how the distribution varies between patients who have heart disease and those who do not. This visualization helps in understanding whether certain numerical features exhibit distinct patterns or variations associated with the presence or absence of heart disease.
-.
+![violin_plots](https://github.com/user-attachments/assets/cb60023f-ff3f-4118-96c7-57a9c010cc7c)
 
 - **Pie Charts**: Pie charts are created for categorical features to display the distribution of each category in relation to the output variable. These charts visually represent the proportion of each category within the context of the heart disease classification, making it easier to understand how different categorical attributes are associated with heart disease. For example, pie charts might show the proportion of patients with different chest pain types or fasting blood sugar levels, illustrating how these categories contribute to the likelihood of heart disease.
 
