@@ -66,6 +66,31 @@ The target variable in the dataset is `output`, which indicates whether the pati
 
 Overall, the `heart.csv` dataset provides a rich source of information for analyzing and predicting heart disease risk, enabling the development of a robust model for heart attack prediction based on various health attributes.
 
+# Installation
+To run the project, you need to have Python installed along with the following libraries:
+
+```bash
+pip install pandas numpy scipy seaborn matplotlib scikit-learn
+```
+
+# Project Overview
+
+## 1. Data Loading and Exploration
+- **Data Loading**: The dataset is loaded using the pandas library. Initial exploration includes checking the data shape, data types, and missing values.
+- **Basic Statistics**: Descriptive statistics are generated to understand the distribution and central tendencies of the dataset.
+```python
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('heart.csv')
+
+# Basic data exploration
+print(df.shape)
+print(df.info())
+print(df.describe().T)
+```
+
+
 
 
 
