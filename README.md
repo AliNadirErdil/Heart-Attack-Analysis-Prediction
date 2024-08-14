@@ -14,7 +14,7 @@ Overall, the project aims to provide actionable insights into the factors contri
 
 ## Table of Contents
 - [Dataset](#dataset)
-- [Installation](#installation)
+- [Installation & Usage](#installation--usage)
 - [Project Overview](#project-overview)
   - [1. Data Loading and Exploration](#1-data-loading-and-exploration)
   - [2. Outlier Detection](#2-outlier-detection)
@@ -68,7 +68,7 @@ The target variable in the dataset is `output`, which indicates whether the pati
 
 Overall, the `heart.csv` dataset provides a rich source of information for analyzing and predicting heart disease risk, enabling the development of a robust model for heart attack prediction based on various health attributes.
 
-# Installation
+## Installation & Usage
 
 To run this project and execute the provided code, you'll need to set up your environment with the necessary libraries and dependencies. Follow the instructions below to install the required packages.
 
@@ -78,35 +78,23 @@ Ensure you have Python installed on your system. It is recommended to use Python
 
 ### Step-by-Step Installation
 
-## 1. **Clone the Repository**
+1. **Clone the Repository**
 
    First, clone this repository to your local machine using Git. Open your terminal or command prompt and run the following command:
 
-   ```bash
-   git clone https://github.com/yourusername/heart-attack-analysis.git
-   ```
-## 2. **Navigate to the Project Directory**
+```bash
+git clone https://github.com/yourusername/heart-attack-analysis.git
+```
+2. **Navigate to the Project Directory**
 
 Change your directory to the project folder:
-
-
    ```bash
 cd heart-attack-analysis
    ```
-## 3. **Create a Virtual Environment**
-
-It's a good practice to create a virtual environment to manage your project's dependencies. Run the following command to create a virtual environment:
-   ```bash
-python -m venv venv
-   ```
-
-
-
-
-
-
-
-
+3. **Open the Jupyter Notebook**
+```bash
+jupyter notebook
+```
 
 # Project Overview
 
