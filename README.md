@@ -83,7 +83,7 @@ Ensure you have Python installed on your system. It is recommended to use Python
 First, clone this repository to your local machine using Git. Open your terminal or command prompt and run the following command:
 
 ```bash
-git clone https://github.com/yourusername/heart-attack-analysis.git
+git clone https://github.com/AliNadirErdil/heart-attack-analysis.git
 ```
 2. **Navigate to the Project Directory**
 
