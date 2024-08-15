@@ -90,7 +90,7 @@ git clone https://github.com/AliNadirErdil/Heart-Attack-Analysis-Prediction.git
 
 Change your directory to the project folder:
    ```bash
-cd heart-attack-analysis
+cd Heart-Attack-Analysis-Prediction
    ```
 
 3. **Install the required dependencies:**
