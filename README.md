@@ -156,6 +156,26 @@ print(outlier_rows)
 
 ![numeric_feature_scatter_plots](https://github.com/user-attachments/assets/2f26d73e-c4a1-4400-8723-a3bf841f583e)
 
+### Outliers in Scatter Plots
+
+In the scatter plots, outliers are retained for the following reasons:
+
+
+  1. **Clinical Relevance**: Outliers like high cholesterol levels are crucial for understanding heart disease risk. High cholesterol is a well-known risk factor and excluding such values could remove important information about patients at risk.
+
+  2. **Hypertension**: High values in other features, such as elevated blood pressure (trtbps), high maximum heart rate (thalachh), or abnormal resting ECG results (restecg), are often associated with various health conditions, not just one. For example, high cholesterol (chol) can be seen in patients with metabolic disorders or other cardiovascular conditions. Removing these outliers might overlook critical data that reflects a wider range of health issues.
+
+  3. **Dataset Size**: Given the relatively small size of the dataset, removing outliers could significantly reduce its diversity and complexity. Maintaining these data points ensures a more robust and representative analysis of heart disease risk.
+
+
+In summary, preserving outliers provides a comprehensive view of potential health issues and helps in developing a more accurate predictive model.
+
+
+
+
+
+
+
 - **Heatmaps**: Correlation heatmaps are used to visualize the relationships between different numerical features in the dataset. By displaying a matrix of correlation coefficients, heatmaps highlight the degree to which features are linearly related to each other. This visualization aids in identifying features with strong correlations, which can be crucial for feature selection and understanding multicollinearity. High correlation between features may indicate redundancy, while low correlation can suggest unique contributions to the predictive model.
 
 ![image](https://github.com/user-attachments/assets/d1ad4c44-bfa6-497c-af09-eedb0a88ef30)
