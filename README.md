@@ -292,6 +292,7 @@ y_pred = logreg.predict(X_test)
 # Evaluation
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.4f}")
+print("\nClassification Report:\n", classification_report(y_test, y_pred, target_names=['Less chance of heart attack', 'More chance of heart attack']))
 ```
 # Results
 
